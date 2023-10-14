@@ -37,10 +37,19 @@ const MapContainer = () => {
             {location && (
                 <Map
                     center={{ lat: location.latitude, lng: location.longitude }}
-                    style={{ width: '800px', height: '600px' }}
+                    style={{ width: '1000px', height: '600px' }}
                     level={3}
                 >
-                    <MapMarker position={{ lat: location.latitude, lng: location.longitude }} />
+                    <MapMarker
+                        position={{
+                            lat: location.latitude,
+                            lng: location.longitude
+                        }}
+                    >   
+                        <div style={{ padding: "10px", color: "#000" }}>
+                            내 위치
+                        </div>
+                    </MapMarker>
                     <Button onClick={getAddress}>현재 주소</Button>
                 </Map>
             )}
