@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Map, MapMarker } from 'react-kakao-maps-sdk';
 import Button from 'react-bootstrap/Button';
+import ShelterList from 'components/shelter/ShelterList';
 
 const MapContainer = () => {
     const { kakao } = window;
@@ -34,7 +35,7 @@ const MapContainer = () => {
 
     return (
         <>
-            {location && (
+            {location && <>
                 <Map
                     center={{ lat: location.latitude, lng: location.longitude }}
                     style={{ width: '1000px', height: '600px' }}
@@ -52,7 +53,9 @@ const MapContainer = () => {
                     </MapMarker>
                     <Button onClick={getAddress}>현재 주소</Button>
                 </Map>
-            )}
+                <ShelterList lat={location.latitude} lng={location.longitude}/>
+            </>
+            }
 
             {address && (
                 <div>
