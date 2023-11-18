@@ -7,14 +7,15 @@ import PostDetail from 'components/post/PostDetail';
 import Register from 'components/Register';
 import MemberList from 'components/MemberList';
 import PostMng from 'components/post/PostMng';
-import ShelterMap from 'components/shelter/ShelterMap';
-import Makers from 'components/Makers';
 import Manual from 'components/post/Manual';
-import shelterMap_google from 'components/shelter/MyComponent';
-import MyComponent from 'components/shelter/MyComponent';
+import ShelterMap from 'components/shelter/ShelterMap';
+import ShelterMapOld from 'components/shelter/ShelterMapOld';
+import ShelterMapGoogle from 'components/shelter/ShelterMapGoogle';
+import SideBar from 'components/SideBar';
 
 function BBSRouter() {
-    return (
+    return (<>
+        {/* <SideBar /> */}
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/board" element={<PostList />} />
@@ -22,12 +23,11 @@ function BBSRouter() {
             <Route path="/post/managePost" element={<PostMng />} />
             <Route path="/sign-up" element={<Register />} />
             <Route path="/member-list/:ownerId" element={<MemberList />} />
-            <Route path="/shelter" element={<ShelterMap />} />
+            {/* <Route path="/shelter" element={<ShelterMap />} /> */}
+            <Route path="/shelter" element={<ShelterMapGoogle />} />
             <Route path="/manual" element={<Manual />} />
-            <Route path="/makers" element={<Makers />} />
-            <Route path="/example" element={<MyComponent />} />
         </Routes>
-    );
+    </>);
 }
 
 export default BBSRouter;
