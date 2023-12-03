@@ -140,13 +140,13 @@ def to_dbeaver(NewsDate, NewsTitle, NewsLink) :
         host='localhost'
         , user='root'
         , password='root'
-        , db='mariadb'
+        , db='bbdb'
         , charset='utf8'
     )
     cur = conn.cursor()
     
     for date,title,link in zip(NewsDate, NewsTitle, NewsLink):
-        sql = "INSERT IGNORE INTO news_crawling (id, NewsDate, NewsTitle, NewsLink) VALUES ({}, {}, {})".format("\""+date+"\"", "\""+title+"\"", "\""+link+"\"")
+        sql = "INSERT IGNORE INTO news_crawling (NewsDate, NewsTitle, NewsLink) VALUES ({}, {}, {})".format("\""+date+"\"", "\""+title+"\"", "\""+link+"\"")
         try : 
             cur.execute(sql)
         except Exception as e :

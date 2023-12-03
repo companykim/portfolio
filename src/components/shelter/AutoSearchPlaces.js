@@ -27,8 +27,8 @@ export default function AutoSearchPlaces({ setPlacelating }) {
 
     return (
         <div>
-            <label>enter address :</label>
             <input ref={inputRef} placeholder='장소를 입력하세요...' />
+            <span></span>
         </div>
     );
 
